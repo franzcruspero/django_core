@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="col-12 col-md-10 mb-4 mx-auto">
+            <h1> {{object.title}} </h1>
+            <p> {{object.content}} </p>
+        </div>
+    </div>
+{% endblock %}
